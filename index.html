@@ -154,6 +154,9 @@
 
     /* ── QUICK NAV ── */
     .quick-nav {
+      position: sticky;
+      top: calc(58px + env(safe-area-inset-top, 0px));
+      z-index: 90;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
@@ -161,6 +164,9 @@
       padding: 0 20px;
       display: flex;
       gap: 4px;
+      background: rgba(15,15,16,0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
     .quick-nav::-webkit-scrollbar { display: none; }
@@ -410,8 +416,8 @@
         <span class="sec-label-text">Kapsam</span>
       </div>
       <h2>Kapsam</h2>
-      <p>Bu Gizlilik Politikası, Android için sunulan Kelime Asistanı uygulamasını kapsar. Uygulama; kelime oyunları için oyun, sözlük, alfabe, desen ve tahta yönetimi sağlayan yardımcı bir araçtır.</p>
-      <p>Uygulama resmî Scrabble markasıyla veya marka sahipleriyle bağlantılı olmadığı gibi piyasadaki hiçbir benzeri uygulamayla da ilişkili değildir. Belirli bir oyun, platform veya sözlükle sınırlı değildir.</p>
+      <p>Bu Gizlilik Politikası, Android için sunulan Kelime Asistanı uygulamasını kapsar. Uygulama; kullanıcı tarafından oluşturulan veya yüklenen harf, kelime, tahta, desen ve benzeri veriler üzerinde analiz yapılmasına olanak sağlayan bağımsız bir yazılım aracıdır.</p>
+      <p>Uygulama herhangi bir üçüncü taraf oyun, marka, hizmet veya platform ile bağlantılı değildir. Belirli bir oyun, platform, marka veya hizmete özgü olacak şekilde tasarlanmamış ya da bunlarla teknik entegrasyon kuracak biçimde çalışmaz.</p>
     </article>
 
     <article class="section-card" id="data">
@@ -425,7 +431,7 @@
         <li>Hesap bilgileri: kullanıcı adı, varsa e-posta adresi, şifre doğrulama bilgisi, doğrulama durumu, kayıt tarihi ve giriş tarihleri. Misafir kullanımda e-posta alınmadan rastgele oluşturulan bir kullanıcı adıyla sınırlı bir hesap kaydı oluşturulur.</li>
         <li>Güvenlik ve teknik bilgiler: IP adresi, user-agent, cihaz/istemci bilgisi, yaklaşık ülke/şehir/organizasyon bilgisi, oturum sayısı.</li>
         <li>Google ile giriş bilgileri: Google hesap kimliği, e-posta adresi ve varsa profil görseli.</li>
-        <li>Uygulama verileri: oyunlar, sözlükler, alfabeler, desenler, tahtalar, eldeki harfler, joker ve özel hücre bilgileri.</li>
+        <li>Uygulama verileri: kullanıcı tarafından oluşturulan çalışma alanları, sözlükler, alfabeler, desenler, tahtalar, eldeki harfler, joker ve özel hücre bilgileri.</li>
         <li>Kullanıcı içerikleri: sohbet mesajları, sohbet görselleri, iletişim formu mesajları ve yanıtlar.</li>
         <li>Yerel ayarlar: aktif oyun, aktif sözlük, tema, tanıtım durumu ve uygulama tercihleri.</li>
       </ul>
@@ -440,7 +446,7 @@
       <ul>
         <li>Hesap oluşturmak, oturum açmak ve kimlik doğrulamak.</li>
         <li>Misafir modunda uygulamayı sınırlı şekilde kullanabilmeniz ve daha sonra hesabınızı normal hesaba dönüştürebilmeniz.</li>
-        <li>Çözücü, sözlük, alfabe, desen ve tahta özelliklerini sunmak.</li>
+        <li>Harf işleme, sözlük, alfabe, desen, tahta ve analiz özelliklerini sunmak.</li>
         <li>Mesajları ve görselleri yönetici onayına sunmak.</li>
         <li>Destek taleplerini almak ve yanıtlamak.</li>
         <li>Kötüye kullanımı, spamı ve güvenlik ihlallerini önlemek.</li>
@@ -454,8 +460,10 @@
         <span class="sec-label-text">Fotoğraf Erişimi ve OCR</span>
       </div>
       <h2>Fotoğraf erişimi ve OCR</h2>
-      <p>Tahta tarama özelliği için kullanıcı galeriden bir fotoğraf seçer. Seçilen görsel, harfleri ve tahta alanını algılamak için <strong style="color:var(--text);font-weight:500">cihazda işlenir</strong> — görselin sunucuya yüklenmesi gerekmez.</p>
-      <p>Ancak kullanıcı sohbet veya iletişim formu üzerinden görsel gönderirse, ilgili görsel sunucuya yüklenir ve gönderim amacıyla saklanabilir.</p>
+      <p>Görsel analiz özelliği için kullanıcı galeriden bir fotoğraf seçer. Seçilen görsel; harf, karakter, hücre, desen veya benzeri görsel öğeleri algılamak amacıyla <strong style="color:var(--text);font-weight:500">cihazda işlenir</strong> — görselin sunucuya yüklenmesi gerekmez.</p>
+      <p>Uygulama başka uygulamalardan otomatik ekran görüntüsü almaz, üçüncü taraf uygulamaların verilerine erişmez ve başka uygulamalarla teknik entegrasyon kurmaz. Kullanıcı tarafından açıkça seçilmeyen hiçbir görsel üzerinde işlem yapılmaz.</p>
+      <p>Görsel analiz özelliği genel amaçlıdır; belirli bir oyun, hizmet veya platforma özgü olarak sunulmaz. Analiz sonuçları hatasız olmayabilir ve sonuçları kontrol etmek kullanıcının sorumluluğundadır.</p>
+      <p>Ancak kullanıcı sohbet veya iletişim formu üzerinden görsel gönderirse, ilgili görsel sunucuya yüklenir ve gönderim amacına bağlı olarak saklanabilir.</p>
       <p>Misafir kullanıcılar sohbet içinde resimli mesaj gönderemez; iletişim formunda e-posta adresi hesapta kayıtlı değilse ayrıca istenir.</p>
     </article>
 
